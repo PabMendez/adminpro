@@ -1,3 +1,47 @@
-<p>
-  progress works!
-</p>
+<div class="row">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-body">
+
+        <h4 class='card-title'>Barra de progreso</h4>
+
+        <!-- BARRAS DE PROGRESO -->
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" [attr.ariaValueNow]="porcentaje1"
+            [style.width]="porcentaje1 + '%'" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+        <br>
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped progress-bar-animated " role="progressbar" [attr.ariaValueNow]="porcentaje2"
+            [style.width]="porcentaje2 + '%'" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+
+  <div class="col-6">
+    <div class="card">
+      <div class="card-body">
+
+          <app-incrementador (nombrecualquiera)="porcentaje1 = $event" nombre="Progress 1" [porcentaje]="porcentaje1"></app-incrementador> 
+          <!-- cuando se usan llaves cuadradas [] significa que se puede asociar a una variable -->
+
+      </div>
+    </div>
+  </div>
+
+  <div class="col-6">
+    <div class="card">
+      <div class="card-body">
+
+          <app-incrementador (nombrecualquiera)="porcentaje2 = $event" nombre="Progress 2" [porcentaje]="porcentaje2"></app-incrementador>
+
+      </div>
+    </div>
+  </div>
+
+</div>
